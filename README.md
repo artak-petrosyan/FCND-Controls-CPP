@@ -9,7 +9,7 @@ Udacity Flying Car Nanodegree, Term 1 - Project 3.
 
 ## Overview ##
 
-###Simplified model of the 2D drone.###
+### Simplified model of the 2D drone. ###
 <p align="center">
 <img src="img/Drone0.png" width="400"/>
 </p>
