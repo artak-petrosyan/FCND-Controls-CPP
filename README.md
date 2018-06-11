@@ -49,7 +49,7 @@ In the project repository structure [/cpp](./cpp) is the home folder for C++ cod
 ### Coding Tasks ###
 
 #### Body rate control. ###
-Class memeber function :```V3F QuadControl::BodyRateControl(V3F pqrCmd, V3F pqr)```
+Class member function :```V3F QuadControl::BodyRateControl(V3F pqrCmd, V3F pqr)```
 Code implemented *P Controller* with moment of inertia.`kpPQR`  - should be tuned for making it work.
 
 *Moment_cmd = I *\** Kp *\** err*
@@ -60,7 +60,7 @@ Code implemented *P Controller* with moment of inertia.`kpPQR`  - should be tune
 
 
 #### Roll pitch control. ####
-Class memeber function :```V3F QuadControl::RollPitchControl(V3F accelCmd, Quaternion<float> attitude, float collThrustCmd)```
+Class member function :```V3F QuadControl::RollPitchControl(V3F accelCmd, Quaternion<float> attitude, float collThrustCmd)```
 The roll-pitch controller is a P controller responsible for commanding the roll and pitch rates ( *pcpc  and  qcqc* ) in the body frame. First, it sets the desired rate of change of the given matrix elements using a P controller.
 
 **Note:** subscript "c" means "commanded" and "a" means "actual"
@@ -75,7 +75,7 @@ The roll-pitch controller is a P controller responsible for commanding the roll 
 
 
 #### Altitude controller. ####
-Class memeber function :```float QuadControl::AltitudeControl(float posZCmd, float velZCmd, float posZ, float velZ, Quaternion<float> attitude, float accelZCmd, float dt)```
+Class member function :```float QuadControl::AltitudeControl(float posZCmd, float velZCmd, float posZ, float velZ, Quaternion<float> attitude, float accelZCmd, float dt)```
 
 
 <p align="center">
@@ -85,7 +85,7 @@ Class memeber function :```float QuadControl::AltitudeControl(float posZCmd, flo
 
 
 #### Lateral position control. ####
-Class memeber function :```V3F QuadControl::LateralPositionControl(V3F posCmd, V3F velCmd, V3F pos, V3F vel, V3F accelCmdFF)```
+Class member function :```V3F QuadControl::LateralPositionControl(V3F posCmd, V3F velCmd, V3F pos, V3F vel, V3F accelCmdFF)```
 
 The lateral controller uses a PD controller to command target values for elements of the drone's rotation matrix. The drone generates lateral acceleration by changing the body orientation which results in non-zero thrust in the desired direction.
 The control equations have the following form:
@@ -95,7 +95,7 @@ The control equations have the following form:
 </p>
 
 #### Yaw control. ####
-Class memeber function :```float QuadControl::YawControl(float yawCmd, float yaw)```
+Class member function :```float QuadControl::YawControl(float yawCmd, float yaw)```
 
 Control over yaw is decoupled from the other directions. A P controller is used to control the drone's yaw.
 
@@ -106,7 +106,7 @@ Control over yaw is decoupled from the other directions. A P controller is used 
 Yaw value is constrained to be in range [-Pi, Pi]
 
 #### Calculating the motor commands for given commanded thrust and moments. ####
-Class memeber function :```VehicleCommand QuadControl::GenerateMotorCommands(float collThrustCmd, V3F momentCmd)```
+Class member function :```VehicleCommand QuadControl::GenerateMotorCommands(float collThrustCmd, V3F momentCmd)```
 For finding motor commands we have to resolve system of equations:
 <p align="center">
 
